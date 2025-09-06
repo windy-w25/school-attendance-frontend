@@ -1,12 +1,72 @@
-# React + Vite
+# School Attendance System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Laravel 12 + React  project for managing student attendance.
+Supports Admin and Teacher roles.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Admin
+Register students <br>
+Register teachers <br>
+View Student Report (daily records + summary) <br>
+View Class Monthly Report <br>
 
-## Expanding the ESLint configuration
+### Teacher
+Mark daily attendance for a class <br>
+View Student Report (daily records + summary) <br>
+View Class Monthly Report <br>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Frontend Setup (React + Vite)
+
+1) Go into frontend folder: <br>
+cd school-attendance-web <br>
+npm install <br>
+
+2) Create .env file: VITE_API_URL=http://127.0.0.1:8000/api <br>
+
+3) Run frontend: npm run dev  <br>
+App runs at: http://127.0.0.1:5173 <br>
+
+
+## Backend Setup (Laravel 12)
+
+1) Clone the repo & install dependencies: <br>
+composer install <br>
+cp .env.example .env <br>
+php artisan key:generate <br>
+
+2) Configure .env for database: <br>
+    DB_CONNECTION=mysql <br>
+    DB_DATABASE=school_attendance <br>
+    DB_USERNAME=root <br>
+    DB_PASSWORD= <br>
+
+3) Run migrations & seeders: <br>
+php artisan migrate --seed <br>
+
+This seeds two users: <br>
+
+Admin: admin@school.com / password <br>
+Teacher: teacher@school.com / password <br>
+
+4) Start server: php artisan serve <br>
+
+
+## Usage
+### Admin Dashboard
+
+Manage Students → Add/list students <br>
+Manage Teachers → Add/list teachers <br>
+Student Report → Enter student ID → view daily attendance + summary <br>
+Class Report → Enter class name + month → view class attendance summary <br>
+
+### Teacher Dashboard
+
+Mark Attendance → Select class, pick date, mark present/absent → save <br>
+Student Report → Enter student ID → view daily attendance + summary <br>
+Class Report → Enter class name + month → view class attendance summary <br>
+
+
+
+
+
