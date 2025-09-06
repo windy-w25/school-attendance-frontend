@@ -28,7 +28,6 @@ export default function AdminDashboard() {
 
   return (
     <Box sx={{ p: 2 }}>
-      {/* Header */}
       <AppBar position="static" sx={{ mb: 2 }}>
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", p: 1 }}>
           <Typography variant="h6">Admin Dashboard</Typography>
@@ -38,7 +37,6 @@ export default function AdminDashboard() {
         </Box>
       </AppBar>
 
-      {/* Tabs Navigation */}
       <Tabs
         value={tab}
         onChange={handleTabChange}
@@ -53,7 +51,6 @@ export default function AdminDashboard() {
           <Tab label="Class Report" />
       </Tabs>
 
-      {/* Content Area */}
       <Card>
         <CardContent>
           {tab === 0 && (

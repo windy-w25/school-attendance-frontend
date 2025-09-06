@@ -1,4 +1,3 @@
-// src/pages/teacher/TeacherDashboard.jsx
 import { useState, useEffect } from "react";
 import { api } from "../../api";
 import { useAuth } from "../../auth";
@@ -34,7 +33,6 @@ export default function TeacherDashboard() {
   const [msg, setMsg] = useState("");
   const [classes, setClasses] = useState([]);
 
-    // Fetch classes on mount
     useEffect(() => {
       async function fetchClasses() {
         try {
@@ -47,7 +45,6 @@ export default function TeacherDashboard() {
       fetchClasses();
     }, []);
 
-  // Load students
   const load = async () => {
     if (!className) return;
     const { data } = await api.get(
@@ -61,7 +58,6 @@ export default function TeacherDashboard() {
     setMarks(Object.fromEntries(data.map((s) => [s.id, "present"])));
   };
 
-  // Submit attendance
   const submit = async () => {
     const payload = {
       class_name: className,

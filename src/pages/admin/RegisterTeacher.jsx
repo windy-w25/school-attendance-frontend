@@ -1,27 +1,3 @@
-
-// import { useState } from 'react';
-// import { api } from '../../api';
-// export default function RegisterTeacher(){
-//   const [name,setName]=useState(''); const [email,setEmail]=useState(''); const [password,setPassword]=useState('');
-//   const [msg,setMsg]=useState('');
-//   const submit = async e => {
-//     e.preventDefault();
-//     const {data} = await api.post('/teachers',{name,email,password});
-//     setMsg(`Created teacher ${data.name}`);
-//     setName(''); setEmail(''); setPassword('');
-//   };
-//   return (<form onSubmit={submit}>
-//     <h3>Register Teacher</h3>
-//     <input placeholder="Name" value={name} onChange={e=>setName(e.target.value)} />
-//     <input placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
-//     <input placeholder="Password" type="password" value={password} onChange={e=>setPassword(e.target.value)} />
-//     <button>Create</button>
-//     {msg && <div>{msg}</div>}
-//   </form>);
-// }
-
-
-// src/pages/admin/RegisterTeacher.jsx
 import { useState } from "react";
 import { api } from "../../api";
 import {
